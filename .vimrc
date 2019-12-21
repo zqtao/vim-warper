@@ -179,26 +179,26 @@ nmap 6 <C-o>
 nmap 7 <C-i>
 
 "行号切换
-map <silent> <F2> : call UserFunctionSwitch(0) <CR>
+map <F2> : call UserFunctionSwitch(0) <CR>
 "鼠标切换
-nmap <silent> <Leader><F2> : call UserFunctionSwitch(1) <CR>
+nmap <Leader><F2> : call UserFunctionSwitch(1) <CR>
 
 "neadtree
-nmap <silent> <Leader><F3> : call UserFunctionSwitch(2) <CR>
+nmap <Leader><F3> : call UserFunctionSwitch(2) <CR>
 "tagbarlist
-nmap <silent> <F3> : call UserFunctionSwitch(3) <CR>
+nmap <F3> : call UserFunctionSwitch(3) <CR>
 
 "mru, file open history record
 " nmap <silent> <Leader><F4> : call UserFunctionSwitch(4) <CR>
 " ctrlpFunky
-nmap <silent> <Leader><F4> : exec 'CtrlPFunky' <CR>
-nmap <silent> <Leader>fu : exec 'CtrlPFunky ' . expand('<cword>') <CR>
+nmap <Leader><F4> : exec 'CtrlPFunky' <CR>
+nmap <Leader>fu : exec 'CtrlPFunky ' . expand('<cword>') <CR>
 "file search
-nmap <silent> <F4> : exec "CtrlP ." <CR>
+nmap <F4> : exec "CtrlP ." <CR>
 
 "make source tags
-nmap <silent> <Leader><F5> : call UserFunctionSwitch(5) <CR>
-" nmap <silent> <Leader><F5> : call UserFunctionSwitch(51) <CR>
+nmap <F5> : call UserFunctionSwitch(5) <CR>
+nmap <F5> : call UserFunctionSwitch(51) <CR>
 
 "miniBuf
 nmap <silent> <Leader><F6> : call UserFunctionSwitch(70) <CR>
@@ -523,9 +523,7 @@ if executable('ag')
 else
     let g:ctrlp_use_caching = 1
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-    'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    }
+    let g:ctrlp_prompt_mappings = {'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
 endif
 
 " echo "g:ctrlp_user_command :" g:ctrlp_user_command
